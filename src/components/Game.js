@@ -1,4 +1,6 @@
 import { useState, useRef } from 'react'
+
+// Estilos
 import './Game.css'
 
 const Game = ({
@@ -37,18 +39,18 @@ const Game = ({
       </h3>
       <p>Você ainda tem {guesses} tentativa(s).</p>
       <div className='wordContainer'>
-        {letters.map((letter, i) => (
+        {letters.map((letter, i) => 
           //Se a letra tiver sido adivinhada:
           guessedLetters.includes(letter) ? (
-            <span key={i} className="letter">{letter}</span>
+            <span className="letter" key={i}>
+              {letter}
+            </span>
           //Se a letra NÃO tiver sido adivinhada:
           ) : (
             <span key={i} className="blankSquare"></span>
           )
+        )}
 
-        ))}
-        {/* <span className='letter'>{}</span>
-        <span className='blankSquare'></span> */}
       </div>
       <div className='letterContainer'>
         <p>Tente adivinhar uma letra da palavra</p>
